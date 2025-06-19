@@ -208,7 +208,8 @@ const FileUpload: React.FC = () => {
       prevFiles.map((fileData) => {
         if (fileData.id === fileId && fileData.status === "pending") {
           const upload = new window.tus.Upload(fileData.file, {
-            endpoint: "http://localhost:8080/api/tus/file/upload",
+            //endpoint: "http://localhost:8080/api/tus/file/upload",
+            endpoint: "https://nuneddine.xquare.app/api/tus/file/upload",
             chunkSize: 50 * 1024 * 1024, // 50MB chunks
             retryDelays: [0, 1000, 3000, 5000],
             metadata: {
